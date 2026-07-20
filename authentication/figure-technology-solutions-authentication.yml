@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml
+docs: https://docs.figure.com/getting-started
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  notes: >-
+    Every Figure Partner API request requires two headers: an `apikey` header
+    carrying the key Figure supplies to the partner, and a `User-Agent` header.
+    Requests without both headers are rejected. The Portfolio Manager and HELOC
+    Inquiries APIs declare/document the `apikey` header scheme; the HELOC
+    Pre-Qualification API is keyed by an `affiliateId` supplied by Figure.
+    Request/response payloads carrying PII may additionally be JWE-encrypted
+    (RSA-OAEP-256 + A256GCM) — see conventions/ and security docs.
+schemes:
+- name: apikey
+  type: apiKey
+  in: header
+  parameter: apikey
+  sources:
+  - openapi/figure-technology-solutions-heloc-inquiries-openapi.yml
+  docs: https://docs.figure.com/getting-started
+- name: affiliateId
+  type: apiKey
+  in: parameter
+  parameter: affiliateId
+  note: >-
+    HELOC Pre-Qualification uses an affiliateId key (not declared as an OpenAPI
+    securityScheme). Sandbox affiliateIds are published in the docs — see sandbox/.
+  sources:
+  - https://docs.figure.com/heloc-pre-qualification/api
