@@ -1,0 +1,28 @@
+{
+  "provider": "figure-technology-solutions",
+  "sources": [
+    "figure-technology-solutions-encryption-api-openapi.yml",
+    "figure-technology-solutions-heloc-application-requests-api-openapi.yml",
+    "figure-technology-solutions-heloc-offers-api-openapi.yml",
+    "figure-technology-solutions-loan-originator-requests-api-openapi.yml",
+    "figure-technology-solutions-loan-tape-v1-api-openapi.yml",
+    "figure-technology-solutions-loan-tape-v2-api-openapi.yml",
+    "figure-technology-solutions-payment-history-v1-api-openapi.yml",
+    "figure-technology-solutions-payment-history-v2-api-openapi.yml"
+  ],
+  "outputs": [
+    "figure-technology-solutions-encryption-api-openapi.yml",
+    "figure-technology-solutions-heloc-application-requests-api-openapi.yml",
+    "figure-technology-solutions-heloc-offers-api-openapi.yml",
+    "figure-technology-solutions-loan-originator-requests-api-openapi.yml",
+    "figure-technology-solutions-loan-tape-v1-api-openapi.yml",
+    "figure-technology-solutions-loan-tape-v2-api-openapi.yml",
+    "figure-technology-solutions-payment-history-v1-api-openapi.yml",
+    "figure-technology-solutions-payment-history-v2-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

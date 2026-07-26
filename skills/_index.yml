@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+skills:
+- file: figure-technology-solutions-run-heloc-inquiry.md
+  name: Run a Figure HELOC inquiry end to end
+  api: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml
+  operations: [startInquiry, fetchMatchingProperties, selectProperty, addInquirySsn,
+    addInquiryIncome, selectInquiryOffer, fetchAppDetails]
+- file: figure-technology-solutions-prequalify-heloc.md
+  name: Pre-qualify a HELOC lead
+  api: openapi/figure-technology-solutions-heloc-pre-qualification-openapi.yml
+  operations: [prequalifyHeloc, getHelocOffersV2]

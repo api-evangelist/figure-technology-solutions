@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.figure.com/getting-started
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: >-
+    Endpoints carry a major version code in the path (e.g. /products/heloc/v1/...,
+    /management/v1/loan-originator, /external/secure/api/v1|v2/portfolio,
+    /products/heloc/pre-qualify/v1|v2). Both v1 and v2 variants are live for
+    Pre-Qualification and Portfolio Manager.
+  docs: https://docs.figure.com/getting-started
+deprecation:
+  policy: >-
+    "Endpoints use major version codes in URLs. When a new version is released,
+    old endpoints will return a deprecation message." (getting-started)
+  sunset_header: unknown
+  docs: https://docs.figure.com/getting-started
+status_page: https://status.figure.com/
+sla:
+  url: null
+  note: No public uptime SLA published; status page is embedded in the docs footer.
+deprecated_operations: []

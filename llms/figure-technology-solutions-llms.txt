@@ -1,0 +1,26 @@
+# Figure Technology Solutions
+
+> Reno, Nevada fintech (founded 2018) building blockchain-based platforms for lending, capital markets, and asset management. Its Partner APIs originate and manage Home Equity Line of Credit (HELOC) loans, and Figure Connect is its blockchain loan marketplace. REST/JSON, apikey-header auth, JWE (RSA-OAEP-256 + A256GCM) payload encryption.
+
+## APIs
+
+- [HELOC Inquiries API](https://docs.figure.com/heloc-inquiries/guide): full inquiry lifecycle — start, property match, income/SSN, liens, offers, documents.
+- [HELOC Pre-Qualification API](https://docs.figure.com/heloc-pre-qualification/guide): real-time non-licensed lead pre-qualification and offer retrieval.
+- [Portfolio Manager API](https://docs.figure.com/portfolio-manager/api): reporting/download over owned and pledged loan pools.
+- [Loan Originator API](https://docs.figure.com/loan-originator/guide): loan-originator directory management.
+- [Asset Onboarding API](https://docs.figure.com/asset-onboarding/overview): asset onboarding.
+
+## Specs
+
+- [HELOC Inquiries OpenAPI 3.1.0](https://docs.figure.com/api-directory/heloc-inquiries-openapi.yaml)
+- [HELOC Pre-Qualification OpenAPI 3.0.1](https://docs.figure.com/api-directory/heloc-pre-qualification-openapi.yaml)
+- [Portfolio Manager OpenAPI 3.0.1](https://docs.figure.com/api-directory/portfolio-manager-openapi.yaml)
+
+## Docs
+
+- [Getting Started](https://docs.figure.com/getting-started)
+- [JWE Data Protection](https://docs.figure.com/jwe-data-protection/intro)
+- [Webhooks](https://docs.figure.com/webhooks/getting-started)
+- [Partner Onboarding](https://docs.figure.com/partner-onboarding)
+- [Status](https://status.figure.com/)
+- [GitHub](https://github.com/FigureTechnologies)

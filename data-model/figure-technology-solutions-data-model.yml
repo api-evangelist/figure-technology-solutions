@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml
+note: >-
+  Entity-relationship graph derived from the HELOC Inquiries OpenAPI (93 schemas) and
+  the path/identifier structure. The application/inquiry (appUuid) is the aggregate
+  root; loanOriginatorUuid references the loan-originator directory.
+identifiers:
+- name: appUuid
+  format: uuid
+  entity: Application
+  note: Returned by startInquiry; the path key for the inquiry lifecycle.
+- name: loanOriginatorUuid
+  format: uuid
+  entity: LoanOriginator
+- name: offerUuid
+  format: uuid
+  entity: Offer
+- name: documentUuid
+  format: uuid
+  entity: Document
+entities:
+- {name: Application, schema: AppDataResponse, root: true}
+- {name: Borrower, schema: BorrowerResponse}
+- {name: Applicant, schema: ApplicantRequest}
+- {name: Property, schema: MatchingPropertyResponse}
+- {name: Offer, schema: UnderwritingOfferResponse}
+- {name: Income, schema: IncomeRequest}
+- {name: Liability, schema: LiabilityResponse}
+- {name: Lien, schema: LienRequest}
+- {name: Document, schema: DocumentSummary}
+- {name: LoanOriginator, schema: LoanOriginatorData}
+- {name: DirectDebtPayoff, schema: DdpDetails}
+- {name: BorrowerCosts, schema: BorrowerCostsResponse}
+relationships:
+- {from: Application, to: Borrower, kind: has_one, via: borrower}
+- {from: Application, to: Property, kind: has_many, via: properties}
+- {from: Application, to: Offer, kind: has_many, via: offers}
+- {from: Application, to: Income, kind: has_one, via: income}
+- {from: Application, to: Lien, kind: has_many, via: liens}
+- {from: Application, to: Document, kind: has_many, via: documents}
+- {from: Application, to: LoanOriginator, kind: belongs_to, via: loanOriginatorUuid}
+- {from: Application, to: DirectDebtPayoff, kind: has_one, via: directDebtPayoff}
+- {from: Application, to: BorrowerCosts, kind: has_one, via: borrowerCosts}
+- {from: Offer, to: DirectDebtPayoff, kind: has_many, via: selectedAccountsToPayoff}

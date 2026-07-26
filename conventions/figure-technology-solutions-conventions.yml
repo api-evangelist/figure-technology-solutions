@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.figure.com/getting-started
+docs:
+- https://docs.figure.com/getting-started
+- https://docs.figure.com/jwe-data-protection/intro
+authentication:
+  style: api-key-header
+  detail: >-
+    `apikey` header + required `User-Agent` header on every request. HELOC
+    Pre-Qualification keys on an affiliateId. See authentication/.
+  cross_ref: authentication/figure-technology-solutions-authentication.yml
+encryption:
+  model: JWE (JSON Web Encryption)
+  algorithms: {alg: RSA-OAEP-256, enc: A256GCM}
+  detail: >-
+    Request payloads carrying PII are encrypted with Figure's public key and wrapped
+    in a top-level `encrypted` field; responses can be requested encrypted via the
+    `X-Encrypt-Response: true` header. Figure also exposes an Encryption API
+    (POST /encryption/v1/encrypt) to encrypt JSON payloads server-side for partners
+    who cannot encrypt client-side. Webhook payloads support RSA encryption when the
+    partner supplies a public key.
+  docs: https://docs.figure.com/jwe-data-protection/intro
+pagination:
+  style: offset-limit
+  params: [offset, limit]
+  defaults: {offset: 0, limit: 100}
+  response_fields: [total, count]
+  detail: >-
+    Documented on the Loan Originator directory (GET /management/v1/loan-originator)
+    with offset/limit query params and total/count in the response envelope.
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency-key header or parameter is documented across the Partner APIs.
+versioning:
+  style: uri-path
+  detail: Major version code embedded in the path; see lifecycle/.
+  cross_ref: lifecycle/figure-technology-solutions-lifecycle.yml
+request_tracing:
+  header: null
+  detail: No request-id / correlation-id header documented.
+error_envelope:
+  detail: >-
+    Pre-Qualification returns HTTP 400/408 with a JSON body; HELOC Inquiries
+    responses are modeled around 200 with domain status fields (nextInquiryStepType,
+    overallStatus). See errors/.
+  cross_ref: errors/figure-technology-solutions-problem-types.yml
+rate_limiting:
+  detail: No published rate-limit headers or quotas.

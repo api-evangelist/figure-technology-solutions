@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml
+note: >-
+  No official hosted/remote MCP server is published by Figure. The tool list below is
+  a CANDIDATE derived one-to-one from HELOC Inquiries OpenAPI operationIds, as a
+  starting point for an MCP wrapper. Auth is apikey-header; PII payloads are JWE.
+server:
+  name: figure-heloc
+  transport: http
+  url: null
+tools:
+- {name: start_inquiry, description: Start a new HELOC inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#startInquiry}
+- {name: fetch_app_details, description: Fetch details about an application, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#fetchAppDetails}
+- {name: fetch_matching_properties, description: Fetch matching properties on an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#fetchMatchingProperties}
+- {name: select_property, description: Select a matching property, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#selectProperty}
+- {name: add_inquiry_ssn, description: Add a borrower SSN to an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#addInquirySsn}
+- {name: add_inquiry_income, description: Add income to an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#addInquiryIncome}
+- {name: asset_depletion, description: Add income and liability payoff (asset depletion), source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#assetDepletion}
+- {name: add_property_estimate, description: Add borrower property value estimate, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#addInquiryPropertyEstimate}
+- {name: verify_inquiry_liens, description: Verify liens for an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#verifyInquiryLiens}
+- {name: repull_credit, description: Repull credit for an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#repullCredit}
+- {name: fetch_direct_debt_payoff, description: Fetch direct debt payoff details, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#fetchDirectDebtPayoffDetails}
+- {name: select_inquiry_offer, description: Select an offer for an inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#selectInquiryOffer}
+- {name: get_borrower_costs, description: Get borrower costs for an application, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#getBorrowerCosts}
+- {name: cancel_inquiry, description: Cancel a HELOC inquiry, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#cancelInquiry}
+- {name: reassign_lead, description: Reassign a lead to another loan originator, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#reassignLead}
+- {name: update_inquiry_attributions, description: Update inquiry attributions, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#updateInquiryAttributions}
+- {name: list_documents, description: List documents for an application, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#listDocuments}
+- {name: download_document, description: Download a document for an application, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#downloadDocument}
+- {name: download_all_documents, description: Download all documents for an application, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#downloadAllDocuments}
+- {name: fetch_loan_originators, description: Fetch loan originators by email or pagination, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#fetchLoanOriginators}
+- {name: encrypt_payload, description: Encrypt a JSON payload using Figure's public key, source_operation: openapi/figure-technology-solutions-heloc-inquiries-openapi.yml#encryptPayload}

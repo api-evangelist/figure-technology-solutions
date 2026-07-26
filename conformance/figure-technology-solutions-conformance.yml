@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/
+standards:
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityScheme; APIs use apikey-header auth.
+- id: oidc
+  conforms: false
+- id: rest-json
+  conforms: true
+  evidence: >-
+    Resource-oriented REST URLs, JSON request/response bodies, standard HTTP status
+    codes (Portfolio Manager description states this explicitly).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are plain JSON + HTTP status, not application/problem+json.
+- id: jwe-rfc7516
+  conforms: true
+  evidence: >-
+    PII payloads use JWE (RSA-OAEP-256 key wrap + A256GCM content encryption) per the
+    JWE Data Protection docs and the /encryption/v1/encrypt endpoint.
+- id: pagination-offset-limit
+  conforms: true
+  evidence: offset/limit params with total/count on the Loan Originator directory.
+- id: openapi-3
+  conforms: true
+  evidence: >-
+    Three published OpenAPI specs (HELOC Inquiries 3.1.0, HELOC Pre-Qualification 3.0.1,
+    Portfolio Manager 3.0.1).

@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of /.well-known/ on Figure hosts
+note: >-
+  No /.well-known/ discovery documents are published on Figure's API, website,
+  or docs hosts as of the probe date. security.txt, openid-configuration,
+  oauth-authorization-server, api-catalog, and ai-plugin.json all return 404.
+  Absence recorded as valid data. The docs-root paths (docs.figure.com/openapi.json,
+  /llms.txt, /.well-known/security.txt) return HTTP 200 but serve the Docusaurus
+  SPA HTML shell (soft 404), not real documents.
+hosts:
+- host: https://api.figure.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://www.figure.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /security.txt, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

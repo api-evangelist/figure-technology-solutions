@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/figure-technology-solutions-heloc-pre-qualification-openapi.yml
+format: json
+note: >-
+  Figure's Partner APIs do not use RFC 9457 application/problem+json. Error signaling
+  is via HTTP status codes with a JSON body; the HELOC Inquiries spec models most
+  operations around 200 responses and communicates state through domain status fields
+  (nextInquiryStepType, overallStatus). The concrete error statuses below are derived
+  from the HELOC Pre-Qualification spec responses.
+problems:
+- status: 400
+  title: Bad Request
+  remediation: Invalid or malformed pre-qualification request payload; check required fields.
+  source_operation: openapi/figure-technology-solutions-heloc-pre-qualification-openapi.yml#prequalifyHeloc
+- status: 408
+  title: Request Timeout
+  remediation: >-
+    Upstream pre-qualification/credit evaluation did not complete in time; retry the request.
+  source_operation: openapi/figure-technology-solutions-heloc-pre-qualification-openapi.yml#prequalifyHeloc
+domain_status_fields:
+- field: nextInquiryStepType
+  api: HELOC Inquiries
+  values: [SELECT_PROPERTY, CREDIT_MATCH_REQUIRED, UNFREEZE_CREDIT, LIEN_MATCHING_REQUIRED,
+    MORE_ASSETS_REQUIRED, PAYOFF_REQUIRED, PROPERTY_VALUE_REQUIRED, OFFERS_AVAILABLE]
+  note: Drives the inquiry state machine and is echoed on inquiry webhooks.

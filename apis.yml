@@ -1,27 +1,305 @@
 aid: figure-technology-solutions
 name: Figure Technology Solutions
-description: 'Figure Technology Solutions is a company surfaced as a portfolio company of dcm-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a
-  lead awaiting the enrichment pipeline.'
+description: 'Figure Technology Solutions is a Reno, Nevada financial-technology company
+  (founded 2018) that builds and operates blockchain-based platforms for lending, capital
+  markets, and asset management. Its public Partner APIs let integrators originate and
+  manage Home Equity Line of Credit (HELOC) loans end to end: non-licensed pre-qualification
+  and offer retrieval, full HELOC inquiry lifecycle management (start inquiry, select
+  property, add income/SSN, verify liens, select offer, documents), loan-originator
+  directory management, and Portfolio Manager reporting over owned and pledged loan
+  pools. Figure also runs Figure Connect, a blockchain-based loan marketplace connecting
+  loan sellers and buyers. The REST/JSON APIs authenticate with an apikey header and
+  protect PII in transit with JWE encryption (RSA-OAEP-256 + A256GCM).'
 url: https://raw.githubusercontent.com/api-evangelist/figure-technology-solutions/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - dcm-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: real-developer-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://docs.figure.com/img/docusaurus-social-card.jpg
 tags:
 - Company
 - Fintech
-apis: []
+- Lending
+- HELOC
+- Home Equity
+- Mortgage
+- Capital Markets
+- Blockchain
+- Loan Origination
+- Financial Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: figure-technology-solutions:figure-technology-solutions-encryption-api
+  name: Figure Technology Solutions Encryption API
+  description: The Encryption API from Figure Technology Solutions — 1 operation(s) for encryption.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Encryption
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-encryption-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-heloc-application-requests-api
+  name: Figure Technology Solutions HELOC application requests API
+  description: >-
+    The HELOC application requests API from Figure Technology Solutions — 19 operation(s) for heloc application
+    requests.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - HELOC application requests
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-heloc-application-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-heloc-offers-api
+  name: Figure Technology Solutions HELOC Offers API
+  description: The HELOC Offers API from Figure Technology Solutions — 2 operation(s) for heloc offers.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - HELOC Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-heloc-offers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-loan-originator-requests-api
+  name: Figure Technology Solutions Loan Originator requests API
+  description: >-
+    The Loan Originator requests API from Figure Technology Solutions — 1 operation(s) for loan originator
+    requests.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Loan Originator requests
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-loan-originator-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-loan-tape-v1-api
+  name: Figure Technology Solutions Loan Tape V1 API
+  description: The Loan Tape V1 API from Figure Technology Solutions — 6 operation(s) for loan tape v1.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Loan Tape V1
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-loan-tape-v1-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-loan-tape-v2-api
+  name: Figure Technology Solutions Loan Tape V2 API
+  description: The Loan Tape V2 API from Figure Technology Solutions — 3 operation(s) for loan tape v2.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Loan Tape V2
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-loan-tape-v2-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-payment-history-v1-api
+  name: Figure Technology Solutions Payment History V1 API
+  description: >-
+    The Payment History V1 API from Figure Technology Solutions — 3 operation(s) for payment history v1.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Payment History V1
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-payment-history-v1-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
+- aid: figure-technology-solutions:figure-technology-solutions-payment-history-v2-api
+  name: Figure Technology Solutions Payment History V2 API
+  description: >-
+    The Payment History V2 API from Figure Technology Solutions — 1 operation(s) for payment history v2.
+  humanURL: https://docs.figure.com/heloc-inquiries/guide
+  baseURL: https://api.figure.com
+  tags:
+  - Payment History V2
+  properties:
+  - type: OpenAPI
+    url: openapi/figure-technology-solutions-payment-history-v2-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figure.com/heloc-inquiries/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-inquiries/api
+  - type: Documentation
+    url: https://docs.figure.com/heloc-pre-qualification/guide
+  - type: APIReference
+    url: https://docs.figure.com/heloc-pre-qualification/api
+  - type: Documentation
+    url: https://docs.figure.com/portfolio-manager/api
+  - type: APIReference
+    url: https://docs.figure.com/portfolio-manager/api
 common:
+- type: DomainSecurity
+  url: security/figure-technology-solutions-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/figure-technology-solutions-agentic-access.yml
+- type: Authentication
+  url: authentication/figure-technology-solutions-authentication.yml
 - type: Website
   url: https://www.figure.com/
+- type: DeveloperPortal
+  url: https://docs.figure.com/
+- type: Documentation
+  url: https://docs.figure.com/
+- type: APIReference
+  url: https://docs.figure.com/heloc-inquiries/api
+- type: GettingStarted
+  url: https://docs.figure.com/getting-started
+- type: Support
+  url: https://www.figure.com/partner/success-center/
+- type: Blog
+  url: https://www.figure.com/newsroom/
+- type: GitHubOrganization
+  url: https://github.com/FigureTechnologies
+- type: StatusPage
+  url: https://status.figure.com/
+- type: TermsOfService
+  url: https://www.figure.com/terms/
+- type: PrivacyPolicy
+  url: https://www.figure.com/privacy/
+- type: Deprecation
+  url: lifecycle/figure-technology-solutions-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/figure-technology-solutions-lifecycle.yml
+- type: Conventions
+  url: conventions/figure-technology-solutions-conventions.yml
+- type: Sandbox
+  url: sandbox/figure-technology-solutions-sandbox.yml
+- type: ErrorCatalog
+  url: errors/figure-technology-solutions-problem-types.yml
+- type: Conformance
+  url: conformance/figure-technology-solutions-conformance.yml
+- type: MCPServer
+  url: mcp/figure-technology-solutions-mcp.yml
+- type: DataModel
+  url: data-model/figure-technology-solutions-data-model.yml
+- type: WellKnown
+  url: well-known/figure-technology-solutions-well-known.yml
+- type: LLMsTxt
+  url: llms/figure-technology-solutions-llms.txt
+- type: Webhooks
+  url: asyncapi/figure-technology-solutions-webhooks.yml
+- type: Overlay
+  name: HELOC Inquiries overlay
+  url: overlays/figure-technology-solutions-heloc-inquiries-overlay.yaml
+- type: Overlay
+  name: HELOC Pre-Qualification overlay
+  url: overlays/figure-technology-solutions-heloc-pre-qualification-overlay.yaml
+- type: Overlay
+  name: Portfolio Manager overlay
+  url: overlays/figure-technology-solutions-portfolio-manager-overlay.yaml
+- type: AgentSkill
+  name: Run a Figure HELOC inquiry end to end
+  url: skills/figure-technology-solutions-run-heloc-inquiry.md
+- type: AgentSkill
+  name: Pre-qualify a HELOC lead
+  url: skills/figure-technology-solutions-prequalify-heloc.md
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

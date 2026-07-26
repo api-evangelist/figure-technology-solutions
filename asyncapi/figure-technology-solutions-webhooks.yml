@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.figure.com/webhooks/getting-started
+spec_type: Webhooks
+note: >-
+  Figure documents a webhook surface for the HELOC Partner APIs but publishes no
+  AsyncAPI document. Partners register an HTTPS endpoint during onboarding; payloads
+  may be RSA-encrypted when the partner supplies a public key ("RSA encryption is
+  solely supported at this time"). Partner endpoints are required to be HTTPS.
+transport: https-callback
+security:
+  encryption: optional RSA (partner-supplied public key)
+  endpoint_requirement: HTTPS required
+events:
+- name: inquiry
+  description: >-
+    Fired as an inquiry advances through processing phases; carries the next required
+    step for the borrower/partner.
+  payload_fields: [applicationUuid, loanOriginatorNmls, productType, eventTimestamp,
+    nextInquiryStepType, organization]
+  next_step_values: [SELECT_PROPERTY, CREDIT_MATCH_REQUIRED, UNFREEZE_CREDIT,
+    LIEN_MATCHING_REQUIRED, MORE_ASSETS_REQUIRED, PAYOFF_REQUIRED,
+    PROPERTY_VALUE_REQUIRED, OFFERS_AVAILABLE]
+- name: application
+  description: Fired as an application progresses through status changes.
+  payload_fields: [applicationUuid, loanOriginatorNmls, productType, eventTimestamp,
+    status, overallStatus, organization]
