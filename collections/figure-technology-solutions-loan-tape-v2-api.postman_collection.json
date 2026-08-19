@@ -1,0 +1,426 @@
+{
+  "item": [
+    {
+      "id": "c08362e0-c83a-4f9e-8661-8b7a8a5d61e0",
+      "name": "Loan Tape V2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a2544e0a-b629-488f-a9f0-f9190d5fbece",
+          "name": "Returns the distinct list of asset types and groups for currently owned loans",
+          "request": {
+            "name": "Returns the distinct list of asset types and groups for currently owned loans",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "secure",
+                "api",
+                "v2",
+                "portfolio",
+                "asset",
+                "types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Provided key used to access the application's api",
+                "key": "apikey",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e57fb76-99de-4069-a47b-b09239f23911",
+              "name": "List of available asset types associated with this account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "secure",
+                    "api",
+                    "v2",
+                    "portfolio",
+                    "asset",
+                    "types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Provided key used to access the application's api",
+                    "key": "apikey",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ce3f056-3d8a-468a-880a-94cb8f6cb01e",
+          "name": "Returns the distinct list of available layouts for the given asset type",
+          "request": {
+            "name": "Returns the distinct list of available layouts for the given asset type",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "secure",
+                "api",
+                "v2",
+                "portfolio",
+                "layouts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "assetType",
+                  "value": "<string>",
+                  "description": "Asset type to fetch compatible layouts for. Must provide originatorId if using"
+                },
+                {
+                  "disabled": false,
+                  "key": "originatorId",
+                  "value": "<uuid>",
+                  "description": "Originator id to fetch compatible layouts for. Must provide if using assetType query param"
+                },
+                {
+                  "disabled": false,
+                  "key": "assetGroup",
+                  "value": "<string>",
+                  "description": "Name of asset group to fetch compatible layouts for"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Provided key used to access the application's api",
+                "key": "apikey",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc9a131a-41eb-4717-9bcd-9c03e06d37d6",
+              "name": "List of available layouts for the given asset type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "secure",
+                    "api",
+                    "v2",
+                    "portfolio",
+                    "layouts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assetType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originatorId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "assetGroup",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Provided key used to access the application's api",
+                    "key": "apikey",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5483a565-8d00-42c1-93ba-75a9aa3c567f",
+          "name": "Download the latest record of owned loan data by asset type and layout",
+          "request": {
+            "name": "Download the latest record of owned loan data by asset type and layout",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "secure",
+                "api",
+                "v2",
+                "portfolio",
+                "download",
+                "owned",
+                ":layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "assetType",
+                  "value": "<string>",
+                  "description": "Asset type to query assets for. Must provide originatorId if using"
+                },
+                {
+                  "disabled": false,
+                  "key": "originatorId",
+                  "value": "<uuid>",
+                  "description": "Originator id to query assets for. Must provide assetType if using assetType query param"
+                },
+                {
+                  "disabled": false,
+                  "key": "assetGroup",
+                  "value": "<string>",
+                  "description": "Name of asset group to filter assets with"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "layout",
+                  "description": "CSV layout available for the provided asset type"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Provided key used to access the application's api",
+                "key": "apikey",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed54e8bc-d447-4d36-835a-8eefed83a0b4",
+              "name": "CSV record of owned loan data based on the specified asset type and layout",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "secure",
+                    "api",
+                    "v2",
+                    "portfolio",
+                    "download",
+                    "owned",
+                    ":layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assetType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originatorId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "assetGroup",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "layout",
+                      "description": "CSV layout available for the provided asset type"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Provided key used to access the application's api",
+                    "key": "apikey",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.figure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d0c24d8a-b5e3-4538-89ad-b5f1c146cba7",
+    "name": "HELOC Inquiries Encryption Loan Tape V2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

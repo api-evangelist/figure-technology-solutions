@@ -1,0 +1,202 @@
+{
+  "item": [
+    {
+      "id": "c615db3a-b8e4-4cfb-a5fa-60bab9780740",
+      "name": "Payment History V2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1580f19e-d81c-403e-833c-a3f22161f693",
+          "name": "Download the record of payments for owned loans by asset type and report date",
+          "request": {
+            "name": "Download the record of payments for owned loans by asset type and report date",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "secure",
+                "api",
+                "v2",
+                "portfolio",
+                "download",
+                "owned",
+                "payment-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "assetType",
+                  "value": "<string>",
+                  "description": "Asset type to query assets for. Must provide originatorId if using"
+                },
+                {
+                  "disabled": false,
+                  "key": "originatorId",
+                  "value": "<uuid>",
+                  "description": "Originator id to query assets for. Must provide assetType if using assetType query param"
+                },
+                {
+                  "disabled": false,
+                  "key": "assetGroup",
+                  "value": "<string>",
+                  "description": "Name of asset group to filter assets with"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportDate",
+                  "value": "<date>",
+                  "description": "Cutoff date of requested payment history"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownsPayments",
+                  "value": "<boolean>",
+                  "description": "Only show payments received during ownership of loan"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Provided key used to access the application's api",
+                "key": "apikey",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c81b9219-6f64-4c99-a846-0eb30977b695",
+              "name": "CSV of payments for owned loans by asset type and report date",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "secure",
+                    "api",
+                    "v2",
+                    "portfolio",
+                    "download",
+                    "owned",
+                    "payment-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assetType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originatorId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "assetGroup",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "ownsPayments",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Provided key used to access the application's api",
+                    "key": "apikey",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.test.figure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b7610eca-3c6c-4b98-b9c4-827019da2566",
+    "name": "HELOC Inquiries Encryption Payment History V2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
