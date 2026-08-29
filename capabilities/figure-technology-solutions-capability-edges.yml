@@ -1,0 +1,74 @@
+slug: figure-technology-solutions
+provider: Figure Technology Solutions
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: HELOC application requests
+  spec_file: figure-technology-solutions-heloc-application-requests-api-openapi.yml
+  capability_id: BC-1320.10
+  capability_id_l1: BC-1320
+  capability_name: Credit Origination Management
+  confidence: 0.9
+  evidence: POST /products/heloc/v1/inquiry/start  startInquiry  Starts a new inquiry for a HELOC application;
+    PUT .../add-income  Add income to a HELOC inquiry; POST .../repull-credit
+  reason: Full HELOC inquiry/application lifecycle — start inquiry, add SSN and income, verify liens,
+    select offer, cancel — is credit origination workflow for a lending product.
+- tag: HELOC Offers
+  spec_file: figure-technology-solutions-heloc-offers-api-openapi.yml
+  capability_id: BC-1320.10
+  capability_id_l1: BC-1320
+  capability_name: Credit Origination Management
+  confidence: 0.85
+  evidence: POST /products/heloc/pre-qualify/v1  prequalifyHeloc  Request affiliate HELOC offers; schema
+    HelocOfferRequest
+  reason: Pre-qualification and generation of HELOC offers is credit application intake and pre-screening
+    in the lending origination flow.
+- tag: Loan Tape V1
+  spec_file: figure-technology-solutions-loan-tape-v1-api-openapi.yml
+  capability_id: BC-1320.50
+  capability_id_l1: BC-1320
+  capability_name: Loan Portfolio Management
+  confidence: 0.78
+  evidence: Download the latest record of owned loan data by asset type and layout; Download CSV record
+    of pledged loan data by asset type, layout, and cutoff date
+  reason: Portfolio Manager reporting over owned and pledged loan assets for asset holders is loan portfolio
+    analytics and reporting rather than servicing of individual loans.
+- tag: Loan Tape V2
+  spec_file: figure-technology-solutions-loan-tape-v2-api-openapi.yml
+  capability_id: BC-1320.50
+  capability_id_l1: BC-1320
+  capability_name: Loan Portfolio Management
+  confidence: 0.7
+  evidence: GET /external/secure/api/v2/portfolio/download/owned/{layout} — "Download the latest record
+    of owned loan data by asset type and layout"
+  reason: A 'loan tape' download for asset holders querying their owned loan portfolio is loan portfolio
+    reporting/analytics, i.e. Loan Portfolio Management within Credit & Lending. Not a generic reporting
+    utility — the resource is explicitly owned loans by asset type.
+- tag: Payment History V1
+  spec_file: figure-technology-solutions-payment-history-v1-api-openapi.yml
+  capability_id: BC-1320
+  capability_id_l1: BC-1320
+  capability_name: Credit & Lending Management
+  confidence: 0.7
+  evidence: '"Download the record of payments for owned loans by asset type and report date"'
+  reason: Reporting of payments received on owned loans sits in Credit & Lending Management; ambiguous
+    between loan servicing data and portfolio reporting, so no L2 asserted.
+- tag: Payment History V2
+  spec_file: figure-technology-solutions-payment-history-v2-api-openapi.yml
+  capability_id: BC-1320
+  capability_id_l1: BC-1320
+  capability_name: Credit & Lending Management
+  confidence: 0.7
+  evidence: '"Download the record of payments for owned loans by asset type and report date"'
+  reason: Same surface as V1 — loan payment records for owned loan portfolios; Credit & Lending at L1,
+    sub-capability ambiguous between loan servicing and portfolio reporting.

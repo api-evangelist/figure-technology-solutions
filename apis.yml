@@ -256,6 +256,9 @@ apis:
   - type: APIReference
     url: https://docs.figure.com/portfolio-manager/api
 common:
+- type: CapabilityMap
+  url: capabilities/figure-technology-solutions-capability-edges.yml
+  name: Figure Technology Solutions Business Capability Map
 - type: DomainSecurity
   url: security/figure-technology-solutions-domain-security.yml
 - type: AgenticAccess
