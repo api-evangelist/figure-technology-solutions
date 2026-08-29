@@ -1,20 +1,15 @@
 {
   "provider": "figure-technology-solutions",
   "sources": [
-    "figure-technology-solutions-encryption-api-openapi.yml",
-    "figure-technology-solutions-heloc-application-requests-api-openapi.yml",
-    "figure-technology-solutions-heloc-offers-api-openapi.yml",
-    "figure-technology-solutions-loan-originator-requests-api-openapi.yml",
-    "figure-technology-solutions-loan-tape-v1-api-openapi.yml",
-    "figure-technology-solutions-loan-tape-v2-api-openapi.yml",
-    "figure-technology-solutions-payment-history-v1-api-openapi.yml",
-    "figure-technology-solutions-payment-history-v2-api-openapi.yml"
+    "_original/figure-technology-solutions-heloc-inquiries-openapi.yml",
+    "_original/figure-technology-solutions-heloc-pre-qualification-openapi.yml",
+    "_original/figure-technology-solutions-portfolio-manager-openapi.yml"
   ],
   "outputs": [
     "figure-technology-solutions-encryption-api-openapi.yml",
     "figure-technology-solutions-heloc-application-requests-api-openapi.yml",
-    "figure-technology-solutions-heloc-offers-api-openapi.yml",
     "figure-technology-solutions-loan-originator-requests-api-openapi.yml",
+    "figure-technology-solutions-heloc-offers-api-openapi.yml",
     "figure-technology-solutions-loan-tape-v1-api-openapi.yml",
     "figure-technology-solutions-loan-tape-v2-api-openapi.yml",
     "figure-technology-solutions-payment-history-v1-api-openapi.yml",
@@ -23,6 +18,28 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "figure-technology-solutions-heloc-inquiries-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "figure-technology-solutions-heloc-inquiries-openapi.yml: declared missing tag: Encryption",
+    "figure-technology-solutions-heloc-inquiries-openapi.yml: declared missing tag: HELOC application requests",
+    "figure-technology-solutions-heloc-inquiries-openapi.yml: declared missing tag: Loan Originator requests",
+    "figure-technology-solutions-heloc-pre-qualification-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "figure-technology-solutions-heloc-pre-qualification-openapi.yml: declared missing tag: HELOC Offers",
+    "figure-technology-solutions-portfolio-manager-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Loan Tape V1",
+    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Loan Tape V2",
+    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Payment History V1",
+    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Payment History V2"
+  ],
+  "skipped": [
+    "figure-technology-solutions-encryption-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-heloc-application-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-heloc-offers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-loan-originator-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-loan-tape-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-loan-tape-v2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-payment-history-v1-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figure-technology-solutions-payment-history-v2-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
