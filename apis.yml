@@ -258,6 +258,8 @@ apis:
   - type: APIReference
     url: https://docs.figure.com/portfolio-manager/api
 common:
+- type: Login
+  url: https://www.figure.com/leadportal/login/
 - type: CapabilityMap
   url: capabilities/figure-technology-solutions-capability-edges.yml
   name: Figure Technology Solutions Business Capability Map
@@ -332,5 +334,3 @@ x-enrichment:
   status: backfilled
   pass: local-v1
   note: backfilled from .gitignore signal + verified work evidence
-x-parent: figure
-x-relationship: product
