@@ -30,7 +30,8 @@
     "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Loan Tape V1",
     "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Loan Tape V2",
     "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Payment History V1",
-    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Payment History V2"
+    "figure-technology-solutions-portfolio-manager-openapi.yml: declared missing tag: Payment History V2",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "figure-technology-solutions-encryption-api-openapi.yml: previously refined output, superseded by openapi/_original/",

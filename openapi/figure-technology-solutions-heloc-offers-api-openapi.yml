@@ -30,6 +30,8 @@ paths:
               schema:
                 type: object
       parameters: null
+      summary: Get heloc offers V2
+      x-summary-source: derived
   /products/heloc/pre-qualify/v1:
     post:
       tags:
@@ -57,61 +59,6 @@ paths:
       parameters: null
 components:
   schemas:
-    AffiliateOfferResponse:
-      required:
-      - personalizedUrl
-      - product
-      - status
-      type: object
-      properties:
-        status:
-          type: string
-          description: Offers or No Offers
-          example: Offers
-        product:
-          type: string
-          description: Product type ex. HELOC
-          example: HELOC
-          enum:
-          - UNKNOWN_PRODUCT_TYPE
-          - HELOC
-          - LEASE_BACK
-          - PL
-          - CASHOUT_REFI
-          - STUDENT_LOAN_REFI
-          - MERLOC
-          - INVESTOR_PASSPORT
-          - BANK
-          - MARKETPLACE_AUCTION
-          - CSP
-          - BANK_CREDIT
-          - SERVICING
-          - PIGGYBACK
-          - APP_AFFILIATE
-          - PURCHASE_MORTGAGE
-          - APP_AFFILIATE_HELOC
-          - MORTGAGE
-          - CRYPTO_PL
-          - CRYPTO_HELOC
-          - DFS
-          - INVESTOR_PASSPORT_PROFILE
-          - HELOAN
-          - UNIVERSAL_PASSPORT
-          - PIGGYBACK_V2
-          - DSCR
-          - BUSINESS_ONBOARDING
-          - UNRECOGNIZED
-        offers:
-          type: array
-          description: List of offer objects for approved requests
-          items:
-            $ref: '#/components/schemas/AffiliateOfferDto'
-        personalizedUrl:
-          type: string
-          description: Link out to figure.com
-          example: https://test.figure.com/a/external/lead/?id={ATTEMPT_UUID}
-        cannedText:
-          type: string
     HelocOfferRequest:
       required:
       - affiliateId
@@ -313,6 +260,13 @@ components:
           description: Fee that will be added to loan amount
           example: 7328
       description: List of offer objects for approved requests
+    EncryptedHelocOfferRequest:
+      required:
+      - encrypted
+      type: object
+      properties:
+        encrypted:
+          type: string
     OptionalAddressRequest:
       type: object
       properties:
@@ -362,10 +316,58 @@ components:
           - UNRECOGNIZED
         ownerLegalName:
           type: string
-    EncryptedHelocOfferRequest:
+    AffiliateOfferResponse:
       required:
-      - encrypted
+      - personalizedUrl
+      - product
+      - status
       type: object
       properties:
-        encrypted:
+        status:
+          type: string
+          description: Offers or No Offers
+          example: Offers
+        product:
+          type: string
+          description: Product type ex. HELOC
+          example: HELOC
+          enum:
+          - UNKNOWN_PRODUCT_TYPE
+          - HELOC
+          - LEASE_BACK
+          - PL
+          - CASHOUT_REFI
+          - STUDENT_LOAN_REFI
+          - MERLOC
+          - INVESTOR_PASSPORT
+          - BANK
+          - MARKETPLACE_AUCTION
+          - CSP
+          - BANK_CREDIT
+          - SERVICING
+          - PIGGYBACK
+          - APP_AFFILIATE
+          - PURCHASE_MORTGAGE
+          - APP_AFFILIATE_HELOC
+          - MORTGAGE
+          - CRYPTO_PL
+          - CRYPTO_HELOC
+          - DFS
+          - INVESTOR_PASSPORT_PROFILE
+          - HELOAN
+          - UNIVERSAL_PASSPORT
+          - PIGGYBACK_V2
+          - DSCR
+          - BUSINESS_ONBOARDING
+          - UNRECOGNIZED
+        offers:
+          type: array
+          description: List of offer objects for approved requests
+          items:
+            $ref: '#/components/schemas/AffiliateOfferDto'
+        personalizedUrl:
+          type: string
+          description: Link out to figure.com
+          example: https://test.figure.com/a/external/lead/?id={ATTEMPT_UUID}
+        cannedText:
           type: string

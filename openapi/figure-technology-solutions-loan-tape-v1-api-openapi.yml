@@ -10,9 +10,7 @@ info:
     The API is organized around the REST methodology, and it uses resource-oriented URLs and common HTTP response codes to indicate API errors.
 
 
-    All requests are authenticated using an `apikey` header.
-
-    '
+    All requests are authenticated using an `apikey` header.'
   version: latest
 servers:
 - url: https://figure.com
@@ -42,6 +40,8 @@ paths:
                 items:
                   type: string
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioAssetTypes
+      x-operation-id-source: derived
   /external/secure/api/v1/portfolio/layouts/{assetType}:
     get:
       tags:
@@ -69,6 +69,8 @@ paths:
                 items:
                   type: string
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioLayoutsByAssetType
+      x-operation-id-source: derived
   /external/secure/api/v1/portfolio/download/owned/{assetType}/{layout}:
     get:
       tags:
@@ -106,6 +108,8 @@ paths:
                 xml:
                   name: String
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioDownloadOwnedByAssetTypeByLayout
+      x-operation-id-source: derived
   /external/secure/api/v1/portfolio/download/owned/{assetType}/{layout}/{date}:
     get:
       tags:
@@ -149,6 +153,8 @@ paths:
                 xml:
                   name: String
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioDownloadOwnedByAssetTypeByLayoutByDate
+      x-operation-id-source: derived
   /external/secure/api/v1/portfolio/download/pledged/{assetType}/{layout}:
     get:
       tags:
@@ -186,6 +192,8 @@ paths:
                 xml:
                   name: String
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioDownloadPledgedByAssetTypeByLayout
+      x-operation-id-source: derived
   /external/secure/api/v1/portfolio/download/pledged/{assetType}/{layout}/{date}:
     get:
       tags:
@@ -229,3 +237,5 @@ paths:
                 xml:
                   name: String
       deprecated: false
+      operationId: getExternalSecureApiV1PortfolioDownloadPledgedByAssetTypeByLayoutByDate
+      x-operation-id-source: derived

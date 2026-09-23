@@ -10,9 +10,7 @@ info:
     The API is organized around the REST methodology, and it uses resource-oriented URLs and common HTTP response codes to indicate API errors.
 
 
-    All requests are authenticated using an `apikey` header.
-
-    '
+    All requests are authenticated using an `apikey` header.'
   version: latest
 servers:
 - url: https://figure.com
@@ -73,3 +71,5 @@ paths:
                 xml:
                   name: String
       deprecated: false
+      operationId: getExternalSecureApiV2PortfolioDownloadOwnedPaymentHistory
+      x-operation-id-source: derived
