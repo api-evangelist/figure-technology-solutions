@@ -59,6 +59,158 @@ paths:
       parameters: null
 components:
   schemas:
+    AffiliateOfferResponse:
+      required:
+      - personalizedUrl
+      - product
+      - status
+      type: object
+      properties:
+        status:
+          type: string
+          description: Offers or No Offers
+          example: Offers
+        product:
+          type: string
+          description: Product type ex. HELOC
+          example: HELOC
+          enum:
+          - UNKNOWN_PRODUCT_TYPE
+          - HELOC
+          - LEASE_BACK
+          - PL
+          - CASHOUT_REFI
+          - STUDENT_LOAN_REFI
+          - MERLOC
+          - INVESTOR_PASSPORT
+          - BANK
+          - MARKETPLACE_AUCTION
+          - CSP
+          - BANK_CREDIT
+          - SERVICING
+          - PIGGYBACK
+          - APP_AFFILIATE
+          - PURCHASE_MORTGAGE
+          - APP_AFFILIATE_HELOC
+          - MORTGAGE
+          - CRYPTO_PL
+          - CRYPTO_HELOC
+          - DFS
+          - INVESTOR_PASSPORT_PROFILE
+          - HELOAN
+          - UNIVERSAL_PASSPORT
+          - PIGGYBACK_V2
+          - DSCR
+          - BUSINESS_ONBOARDING
+          - UNRECOGNIZED
+        offers:
+          type: array
+          description: List of offer objects for approved requests
+          items:
+            $ref: '#/components/schemas/AffiliateOfferDto'
+        personalizedUrl:
+          type: string
+          description: Link out to figure.com
+          example: https://test.figure.com/a/external/lead/?id={ATTEMPT_UUID}
+        cannedText:
+          type: string
+    EncryptedHelocOfferRequest:
+      required:
+      - encrypted
+      type: object
+      properties:
+        encrypted:
+          type: string
+    AffiliateOfferDto:
+      required:
+      - apr
+      - interestRate
+      - loanAmount
+      - monthlyPayment
+      - originationFee
+      - rateType
+      - term
+      type: object
+      properties:
+        term:
+          type: integer
+          description: Pay off period in months
+          format: int32
+          example: 120
+        rateType:
+          type: string
+          description: Fixed or variable
+          example: fixed
+        loanAmount:
+          type: number
+          description: Requested amount and/or max amount offered plus origination fee
+          example: 146860.0
+        interestRate:
+          type: number
+          description: Interest rate
+          example: 6.25
+        monthlyPayment:
+          type: number
+          description: Monthly payment on plan
+          example: 1648.95
+        apr:
+          type: number
+          description: Annual percentage rate
+          example: 6.25
+        originationFee:
+          type: number
+          description: Fee that will be added to loan amount
+          example: 7328
+      description: List of offer objects for approved requests
+    OptionalAddressRequest:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+        street1:
+          type: string
+          description: Property street address
+          example: 3082 KENSINGTON CT SW
+        street2:
+          type: string
+          description: Property street continued
+        city:
+          type: string
+          description: Property city
+          example: ATLANTA
+        state:
+          type: string
+          description: 2 char US state
+          example: GA
+        zip:
+          type: string
+          description: 5 or 5+4 char US zip code
+          example: '30331'
+        type:
+          type: string
+          description: "Type: \n* `HOME` \n* `MAILING` \n* `SECONDARY` \n* `INVESTMENT`"
+          example: HOME
+          enum:
+          - HOME
+          - MAILING
+          - SECONDARY
+          - INVESTMENT
+          - UNRECOGNIZED
+        ownership:
+          type: string
+          description: "Ownership: \n* `SOLE` \n* `JOINT` \n* `TRUST` \n* `LLC` \n* `OTHER` \n* `UNKNOWN`"
+          example: SOLE
+          enum:
+          - UNKNOWN
+          - SOLE
+          - JOINT
+          - TRUST
+          - LLC
+          - OTHER
+          - UNRECOGNIZED
+        ownerLegalName:
+          type: string
     HelocOfferRequest:
       required:
       - affiliateId
@@ -219,155 +371,3 @@ components:
           - 'null'
           description: Monthly payment on mortgage. High recommended for attested property values so offers can be more accurate.
           example: 1648.95
-    AffiliateOfferDto:
-      required:
-      - apr
-      - interestRate
-      - loanAmount
-      - monthlyPayment
-      - originationFee
-      - rateType
-      - term
-      type: object
-      properties:
-        term:
-          type: integer
-          description: Pay off period in months
-          format: int32
-          example: 120
-        rateType:
-          type: string
-          description: Fixed or variable
-          example: fixed
-        loanAmount:
-          type: number
-          description: Requested amount and/or max amount offered plus origination fee
-          example: 146860.0
-        interestRate:
-          type: number
-          description: Interest rate
-          example: 6.25
-        monthlyPayment:
-          type: number
-          description: Monthly payment on plan
-          example: 1648.95
-        apr:
-          type: number
-          description: Annual percentage rate
-          example: 6.25
-        originationFee:
-          type: number
-          description: Fee that will be added to loan amount
-          example: 7328
-      description: List of offer objects for approved requests
-    EncryptedHelocOfferRequest:
-      required:
-      - encrypted
-      type: object
-      properties:
-        encrypted:
-          type: string
-    OptionalAddressRequest:
-      type: object
-      properties:
-        uuid:
-          type: string
-          format: uuid
-        street1:
-          type: string
-          description: Property street address
-          example: 3082 KENSINGTON CT SW
-        street2:
-          type: string
-          description: Property street continued
-        city:
-          type: string
-          description: Property city
-          example: ATLANTA
-        state:
-          type: string
-          description: 2 char US state
-          example: GA
-        zip:
-          type: string
-          description: 5 or 5+4 char US zip code
-          example: '30331'
-        type:
-          type: string
-          description: "Type: \n* `HOME` \n* `MAILING` \n* `SECONDARY` \n* `INVESTMENT`"
-          example: HOME
-          enum:
-          - HOME
-          - MAILING
-          - SECONDARY
-          - INVESTMENT
-          - UNRECOGNIZED
-        ownership:
-          type: string
-          description: "Ownership: \n* `SOLE` \n* `JOINT` \n* `TRUST` \n* `LLC` \n* `OTHER` \n* `UNKNOWN`"
-          example: SOLE
-          enum:
-          - UNKNOWN
-          - SOLE
-          - JOINT
-          - TRUST
-          - LLC
-          - OTHER
-          - UNRECOGNIZED
-        ownerLegalName:
-          type: string
-    AffiliateOfferResponse:
-      required:
-      - personalizedUrl
-      - product
-      - status
-      type: object
-      properties:
-        status:
-          type: string
-          description: Offers or No Offers
-          example: Offers
-        product:
-          type: string
-          description: Product type ex. HELOC
-          example: HELOC
-          enum:
-          - UNKNOWN_PRODUCT_TYPE
-          - HELOC
-          - LEASE_BACK
-          - PL
-          - CASHOUT_REFI
-          - STUDENT_LOAN_REFI
-          - MERLOC
-          - INVESTOR_PASSPORT
-          - BANK
-          - MARKETPLACE_AUCTION
-          - CSP
-          - BANK_CREDIT
-          - SERVICING
-          - PIGGYBACK
-          - APP_AFFILIATE
-          - PURCHASE_MORTGAGE
-          - APP_AFFILIATE_HELOC
-          - MORTGAGE
-          - CRYPTO_PL
-          - CRYPTO_HELOC
-          - DFS
-          - INVESTOR_PASSPORT_PROFILE
-          - HELOAN
-          - UNIVERSAL_PASSPORT
-          - PIGGYBACK_V2
-          - DSCR
-          - BUSINESS_ONBOARDING
-          - UNRECOGNIZED
-        offers:
-          type: array
-          description: List of offer objects for approved requests
-          items:
-            $ref: '#/components/schemas/AffiliateOfferDto'
-        personalizedUrl:
-          type: string
-          description: Link out to figure.com
-          example: https://test.figure.com/a/external/lead/?id={ATTEMPT_UUID}
-        cannedText:
-          type: string
