@@ -162,55 +162,6 @@ components:
           description: Fee that will be added to loan amount
           example: 7328
       description: List of offer objects for approved requests
-    OptionalAddressRequest:
-      type: object
-      properties:
-        uuid:
-          type: string
-          format: uuid
-        street1:
-          type: string
-          description: Property street address
-          example: 3082 KENSINGTON CT SW
-        street2:
-          type: string
-          description: Property street continued
-        city:
-          type: string
-          description: Property city
-          example: ATLANTA
-        state:
-          type: string
-          description: 2 char US state
-          example: GA
-        zip:
-          type: string
-          description: 5 or 5+4 char US zip code
-          example: '30331'
-        type:
-          type: string
-          description: "Type: \n* `HOME` \n* `MAILING` \n* `SECONDARY` \n* `INVESTMENT`"
-          example: HOME
-          enum:
-          - HOME
-          - MAILING
-          - SECONDARY
-          - INVESTMENT
-          - UNRECOGNIZED
-        ownership:
-          type: string
-          description: "Ownership: \n* `SOLE` \n* `JOINT` \n* `TRUST` \n* `LLC` \n* `OTHER` \n* `UNKNOWN`"
-          example: SOLE
-          enum:
-          - UNKNOWN
-          - SOLE
-          - JOINT
-          - TRUST
-          - LLC
-          - OTHER
-          - UNRECOGNIZED
-        ownerLegalName:
-          type: string
     HelocOfferRequest:
       required:
       - affiliateId
@@ -371,3 +322,52 @@ components:
           - 'null'
           description: Monthly payment on mortgage. High recommended for attested property values so offers can be more accurate.
           example: 1648.95
+    OptionalAddressRequest:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+        street1:
+          type: string
+          description: Property street address
+          example: 3082 KENSINGTON CT SW
+        street2:
+          type: string
+          description: Property street continued
+        city:
+          type: string
+          description: Property city
+          example: ATLANTA
+        state:
+          type: string
+          description: 2 char US state
+          example: GA
+        zip:
+          type: string
+          description: 5 or 5+4 char US zip code
+          example: '30331'
+        type:
+          type: string
+          description: "Type: \n* `HOME` \n* `MAILING` \n* `SECONDARY` \n* `INVESTMENT`"
+          example: HOME
+          enum:
+          - HOME
+          - MAILING
+          - SECONDARY
+          - INVESTMENT
+          - UNRECOGNIZED
+        ownership:
+          type: string
+          description: "Ownership: \n* `SOLE` \n* `JOINT` \n* `TRUST` \n* `LLC` \n* `OTHER` \n* `UNKNOWN`"
+          example: SOLE
+          enum:
+          - UNKNOWN
+          - SOLE
+          - JOINT
+          - TRUST
+          - LLC
+          - OTHER
+          - UNRECOGNIZED
+        ownerLegalName:
+          type: string
