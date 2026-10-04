@@ -47,35 +47,6 @@ paths:
                 $ref: '#/components/schemas/FetchLoanOriginatorsResponse'
 components:
   schemas:
-    BrokerCompanyData:
-      properties:
-        brokerId:
-          type: string
-          format: uuid
-        brokerName:
-          type: string
-        brokerNmls:
-          type: string
-      required:
-      - brokerId
-      - brokerName
-      - brokerNmls
-    FetchLoanOriginatorsResponse:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/LoanOriginatorData'
-        total:
-          type: integer
-          format: int64
-        count:
-          type: integer
-          format: int32
-      required:
-      - count
-      - data
-      - total
     LoanOriginatorData:
       properties:
         loanOriginatorId:
@@ -103,6 +74,35 @@ components:
       - lastName
       - loanOriginatorId
       - organization
+    FetchLoanOriginatorsResponse:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/LoanOriginatorData'
+        total:
+          type: integer
+          format: int64
+        count:
+          type: integer
+          format: int32
+      required:
+      - count
+      - data
+      - total
+    BrokerCompanyData:
+      properties:
+        brokerId:
+          type: string
+          format: uuid
+        brokerName:
+          type: string
+        brokerNmls:
+          type: string
+      required:
+      - brokerId
+      - brokerName
+      - brokerNmls
   securitySchemes:
     apikey:
       type: apiKey
