@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.figure.com/api-directory/heloc-pre-qualification-openapi.yaml",
+ "requested_url": "https://docs.figure.com/api-directory/heloc-pre-qualification-openapi.yaml",
+ "status": 200,
+ "content_type": "application/octet-stream",
+ "bytes": 11165,
+ "sha256": "c6c6042e023b40df3c996050b53af956754f9a0eb1c701495bb0af0de5f6de26",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
