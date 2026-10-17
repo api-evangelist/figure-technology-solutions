@@ -74,6 +74,19 @@ components:
       - lastName
       - loanOriginatorId
       - organization
+    BrokerCompanyData:
+      properties:
+        brokerId:
+          type: string
+          format: uuid
+        brokerName:
+          type: string
+        brokerNmls:
+          type: string
+      required:
+      - brokerId
+      - brokerName
+      - brokerNmls
     FetchLoanOriginatorsResponse:
       properties:
         data:
@@ -90,19 +103,6 @@ components:
       - count
       - data
       - total
-    BrokerCompanyData:
-      properties:
-        brokerId:
-          type: string
-          format: uuid
-        brokerName:
-          type: string
-        brokerNmls:
-          type: string
-      required:
-      - brokerId
-      - brokerName
-      - brokerNmls
   securitySchemes:
     apikey:
       type: apiKey
