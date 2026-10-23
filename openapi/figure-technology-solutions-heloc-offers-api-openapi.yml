@@ -371,3 +371,9 @@ components:
           - 'null'
           description: Monthly payment on mortgage. High recommended for attested property values so offers can be more accurate.
           example: 1648.95
+x-provenance:
+  method: harvested
+  publisher: Figure Technology Solutions
+  source: https://docs.figure.com/api-directory/heloc-pre-qualification-openapi.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)

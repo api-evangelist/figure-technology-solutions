@@ -45,3 +45,9 @@ components:
       type: apiKey
       name: apikey
       in: header
+x-provenance:
+  method: harvested
+  publisher: Figure Technology Solutions
+  source: https://docs.figure.com/api-directory/heloc-inquiries-openapi.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
